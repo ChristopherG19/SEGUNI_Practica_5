@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card">
+        <p-tabMenu [model]="items"></p-tabMenu>
+    </div>
+    <br>
+    <h1>Bienvenido: {{newUser.username}}</h1>
+    <hr>
+    <br>
+    <div class="row">
+        <app-clientes-table></app-clientes-table>
+    </div>
+    <br>
+    <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+
+</div>

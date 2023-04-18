@@ -1,0 +1,199 @@
+<div class="card">
+    <p-toast></p-toast>
+    <p-table
+        dataKey="dpi"
+        [value]="datos"
+        [paginator]="true"
+        [rows]="rowsPerPage"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[1, 5, 10, 15, 20, 25]"
+        editMode="row"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="dpi" style="width:10%">DPI 
+                    <p-sortIcon field="dpi"></p-sortIcon>
+                    <p-columnFilter type="text"field="dpi" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="nombre" style="width:10%">Nombre 
+                    <p-sortIcon field="nombre"></p-sortIcon>
+                    <p-columnFilter type="text"field="nombre" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="apellidoP" style="width:10%">Apellido Paterno 
+                    <p-sortIcon field="apellidoP"></p-sortIcon>
+                    <p-columnFilter type="text"field="apellidoP" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="apellidoM" style="width:10%">Apellido Materno 
+                    <p-sortIcon field="apellidoM"></p-sortIcon>
+                    <p-columnFilter type="text"field="apellidoM" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="claseVia" style="width:10%">Clase de Vía 
+                    <p-sortIcon field="claseVia"></p-sortIcon>
+                    <p-columnFilter type="text"field="claseVia" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="nombreVia" style="width:10%">Nombre de Vía 
+                    <p-sortIcon field="nombreVia"></p-sortIcon>
+                    <p-columnFilter type="text"field="nombreVia" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="numeroVia" style="width:10%">Número de Vía 
+                    <p-sortIcon field="numeroVia"></p-sortIcon>
+                    <p-columnFilter type="number"field="numeroVia" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="ciudad" style="width:10%">Ciudad 
+                    <p-sortIcon field="ciudad"></p-sortIcon>
+                    <p-columnFilter type="text"field="ciudad" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="codigoPostal" style="width:10%">Código Postal 
+                    <p-sortIcon field="codigoPostal"></p-sortIcon>
+                    <p-columnFilter type="text"field="codigoPostal" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="telefono" style="width:10%">Teléfono 
+                    <p-sortIcon field="telefono"></p-sortIcon>
+                    <p-columnFilter type="text"field="telefono" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th pSortableColumn="observaciones" style="width:10%">Observaciones 
+                    <p-sortIcon field="observaciones"></p-sortIcon>
+                    <p-columnFilter type="text"field="observaciones" display="menu" class="ml-auto"></p-columnFilter>
+                </th>
+                <th>Editar</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-dato let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="dato">
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.dpi">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.dpi}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.nombre">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.nombre}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.apellidoP">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.apellidoP}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.apellidoM">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.apellidoM}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.claseVia">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.claseVia}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.nombreVia">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.nombreVia}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="number" [(ngModel)]="dato.numeroVia">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.numeroVia}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.ciudad">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.ciudad}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.codigoPostal">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.codigoPostal}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.telefono">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.telefono}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="dato.observaciones">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{dato.observaciones}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(dato)" class="p-button-rounded p-button-text"></button>
+                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(dato)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                        <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(dato, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+    <br>
+    <p-toolbar>
+        <div class="p-toolbar-group-start button-container">
+            <input type="file" accept=".xlsx" (change)="ReadExcel($event)"/>
+        </div>
+        <div class="p-toolbar-group-end button-container">
+            <p-button label="Save" icon="pi pi-check" (onClick)="UploadData()" styleClass="p-button-warning"></p-button>
+        </div>
+    </p-toolbar>
+</div>
+

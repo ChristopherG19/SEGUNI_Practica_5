@@ -1,0 +1,52 @@
+<div class="card">
+    <p-table
+      [value]="datos"
+      [paginator]="true"
+      [lazy]="true"
+      [rows]="rowsPerPage"
+      editMode="row"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [totalRecords]="totalRecords"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[1, 5, 10, 15, 20, 25]"
+      (onPage)="onPageChange($event)"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:10%">DPI</th>
+                <th style="width:10%">Nombre</th>
+                <th style="width:10%">Apellido Paterno</th>
+                <th style="width:10%">Apellido Materno</th>
+                <th style="width:10%">Clase de Vía</th>
+                <th style="width:10%">Nombre de Vía</th>
+                <th style="width:10%">Número de Vía</th>
+                <th style="width:10%">Ciudad</th>
+                <th style="width:10%">Código Postal</th>
+                <th style="width:10%">Teléfono</th>
+                <th style="width:10%">Observaciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-dato>
+            <tr>
+                <td>{{ dato.dpi }}</td>
+                <td>{{ dato.nombre }}</td>
+                <td>{{ dato.apellidoP }}</td>
+                <td>{{ dato.apellidoM }}</td>
+                <td>{{ dato.claseVia }}</td>
+                <td>{{ dato.nombreVia }}</td>
+                <td>{{ dato.numeroVia }}</td>
+                <td>{{ dato.ciudad }}</td>
+                <td>{{ dato.codigoPostal }}</td>
+                <td>{{ dato.telefono }}</td>
+                <td>{{ dato.observaciones }}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>
