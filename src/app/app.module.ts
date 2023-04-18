@@ -22,6 +22,9 @@ import { DashboardEditComponent } from './dashboard-edit/dashboard-edit.componen
 import { ClientesTableEditComponent } from './clientes-table-edit/clientes-table-edit.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { MenubarModule } from 'primeng/menubar';
+import { CreateClientesComponent } from './create-clientes/create-clientes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { ToastModule } from 'primeng/toast';
     NotFoundComponent,
     ClientesTableComponent,
     DashboardEditComponent,
-    ClientesTableEditComponent
+    ClientesTableEditComponent,
+    CreateClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { ToastModule } from 'primeng/toast';
     ToolbarModule,
     SplitButtonModule,
     FileUploadModule,
-    ToastModule
+    ToastModule,
+    MenubarModule,
+    TabViewModule
   ],
   providers: [
     {

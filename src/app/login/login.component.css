@@ -1,0 +1,27 @@
+.logo {
+    width: 20vw;
+}
+
+.custom-btn {
+  background-color: #007bff; /* Cambia el color del botón a azul marino */
+  color: #fff; /* Cambia el color del texto a blanco */
+  border: none; /* Elimina el borde del botón */
+  padding: 10px 20px; /* Agrega un relleno al botón */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega sombra al botón */
+  transition: all 0.3s ease; /* Agrega transición suave a los cambios de estilo */
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Cambia el color del botón al pasar el cursor por encima */
+  cursor: pointer; /* Agrega el cursor de la mano al pasar el cursor por encima */
+}
+
+.custom-btn:focus {
+  outline: none; /* Elimina el borde de enfoque */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Agrega un borde de enfoque personalizado */
+}
+
+.custom-btn:active {
+  transform: translateY(1px); /* Agrega un efecto de presionar hacia abajo al hacer clic */
+}

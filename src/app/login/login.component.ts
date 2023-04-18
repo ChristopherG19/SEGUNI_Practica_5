@@ -27,7 +27,6 @@ export class LoginComponent {
       localStorage.setItem("user", JSON.stringify(newUser));
       location.href = "/dashboard";
     } else {
-      location.href = "";
       this.invalidUser = true;
     }
   }

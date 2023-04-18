@@ -1,15 +1,14 @@
-<div class="container">
+<div>
+    <div class="header">
+        <div class="header-left">
+            <h1>Bienvenido: {{newUser.username}}</h1>
+        </div>
+        <div class="header-right">
+            <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+    </div>
     <div class="card">
-        <p-tabMenu [model]="items"></p-tabMenu>
+        <p-menubar [model]="items"></p-menubar>
     </div>
     <br>
-    <h1>Bienvenido: {{newUser.username}}</h1>
-    <hr>
-    <br>
-    <div class="row">
-        <app-clientes-table></app-clientes-table>
-    </div>
-    <br>
-    <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
-
 </div>
