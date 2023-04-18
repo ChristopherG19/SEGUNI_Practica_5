@@ -25,6 +25,8 @@ import { ToastModule } from 'primeng/toast';
 import { TabViewModule } from 'primeng/tabview';
 import { MenubarModule } from 'primeng/menubar';
 import { CreateClientesComponent } from './create-clientes/create-clientes.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { CreateClientesComponent } from './create-clientes/create-clientes.compo
     FileUploadModule,
     ToastModule,
     MenubarModule,
-    TabViewModule
+    TabViewModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

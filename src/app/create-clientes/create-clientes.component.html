@@ -1,1 +1,119 @@
-<p>create-clientes works!</p>
+<div class="container">
+    <form [formGroup]="clienteForm">
+        <div class="row">
+            <div class="col">
+                <div class="form-item">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" formControlName="nombre" maxlength="50" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-item">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" formControlName="apellido" maxlength="50" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-item">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" formControlName="estado" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-item">
+                    <label for="nit">NIT:</label>
+                    <input type="text" id="nit" formControlName="nit" maxlength="20" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-item">
+                    <label for="dpi">DPI:</label>
+                    <input type="text" id="dpi" formControlName="dpi" maxlength="20" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-item">
+                    <label for="grabacion_usuario">Grabación Usuario:</label>
+                    <input type="text" id="grabacion_usuario" formControlName="grabacion_usuario" maxlength="20" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="grabacion_fecha">Grabación Fecha:</label>
+                    <input type="date" id="grabacion_fecha" formControlName="grabacion_fecha" required>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-item">
+                    <label for="modificacion_usuario">Modificación Usuario:</label>
+                    <input type="text" id="modificacion_usuario" formControlName="modificacion_usuario" maxlength="20" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="modificacion_fecha">Modificación Fecha:</label>
+                    <input type="date" id="modificacion_fecha" formControlName="modificacion_fecha" required>
+                </div>
+            </div>
+        </div>
+            
+        <!-- Botón para agregar una nueva dirección -->
+        <button class="btn-agregar" type="button" (click)="agregarDireccion()">Ingresar dirección</button>
+
+        <!-- Lista de direcciones ingresadas -->
+        <div class="direccion-container">
+            <div *ngFor="let direccion of direcciones; let i = index" class="direccion-item">
+                <h3>Dirección {{i + 1}}</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="direccion{{i}}">Dirección:</label>
+                            <input type="text" id="direccion{{i}}" formControlName="direccion{{i}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="estado{{i}}">Estado:</label>
+                            <input type="text" id="estado{{i}}" [formControl]="direccionForm.get('estado')" maxlength="1" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="grabacion_usuario{{i}}">Grabación Usuario:</label>
+                            <input type="text" id="grabacion_usuario{{i}}" [formControl]="direccionForm.get('grabacion_usuario')" maxlength="20" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="grabacion_fecha{{i}}">Grabación Fecha:</label>
+                            <input type="date" id="grabacion_fecha{{i}}" [formControl]="direccionForm.get('grabacion_fecha')" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="modificacion_usuario{{i}}">Modificación Usuario:</label>
+                            <input type="text" id="modificacion_usuario{{i}}" [formControl]="direccionForm.get('modificacion_usuario')" maxlength="20" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label for="modificacion_fecha{{i}}">Modificación Fecha:</label>
+                            <input type="date" id="modificacion_fecha{{i}}" [formControl]="direccionForm.get('modificacion_fecha')" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón para eliminar la dirección -->
+                <button class="btn-eliminar" type="button" (click)="eliminarDireccion(direccion)">Eliminar dirección</button>
+            </div>
+        </div>
+    </form>
+</div>
