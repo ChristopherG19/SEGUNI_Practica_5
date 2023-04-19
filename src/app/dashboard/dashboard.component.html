@@ -11,7 +11,12 @@
         <p-menubar [model]="items"></p-menubar>
     </div>
     <div>
-        <app-create-clientes></app-create-clientes>
+        <div [ngSwitch]="selectedComponent">
+            <app-create-clientes *ngSwitchCase="'Creación clientes'"></app-create-clientes>
+            <app-create-coberturas *ngSwitchCase="'Creación coberturas'"></app-create-coberturas>
+            <app-clientes-table *ngSwitchCase="'Mantenimiento de clientes'"></app-clientes-table>
+            <app-create-siniestros *ngSwitchCase="'Ingreso de siniestros'"></app-create-siniestros>
+        </div>      
     </div>
     <br>
 </div>

@@ -11,39 +11,41 @@ export class DashboardComponent implements OnInit{
   successToken = false;
   activeIndex: number = 0;
   items: MenuItem[] = [];
+  selectedComponent: string = '';
 
   ngOnInit():void{
     this.items = [    
       { 
         label: 'Clientes', icon: 'pi pi-user', items: [
-          { label: 'Creación clientes', routerLink: '/creacion-clientes', icon: 'pi pi-user-plus'},
-          { label: 'Mantenimiento de clientes', routerLink: '/mantenimiento-clientes', icon: 'pi pi-user-edit'}
+          { label: 'Creación clientes', icon: 'pi pi-user-plus', command: (item) => this.changeLabel(item)},
+          { label: 'Mantenimiento de clientes', icon: 'pi pi-user-edit', command: (item) => this.changeLabel(item)}
         ]
       },
       {
         label: 'Coberturas', icon: 'pi pi-book', items: [
-          { label: 'Creación coberturas', routerLink: '/creacion-coberturas', icon: 'pi pi-plus'},
-          { label: 'Mantenimiento de coberturas', routerLink: '/mantenimiento-coberturas', icon: 'pi pi-pencil'}
+          { label: 'Creación coberturas', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
+          { label: 'Mantenimiento de coberturas', icon: 'pi pi-pencil', command: (item) => this.changeLabel(item)}
         ]
       },
       { 
         label: 'Polizas', icon: 'pi pi-file', items: [
-          { label: 'Emisión póliza', routerLink: '/emision-poliza', icon: 'pi pi-plus'},
-          { label: 'Consulta y modificación de polizas', routerLink: '/consulta-modificacion-polizas', icon: 'pi pi-file-edit'}
+          { label: 'Emisión póliza', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
+          { label: 'Consulta y modificación de polizas', icon: 'pi pi-file-edit', command: (item) => this.changeLabel(item)}
         ]
       },
       { 
         label: 'Siniestros', icon: 'pi pi-exclamation-triangle', items: [
-          { label: 'Ingreso de siniestros', routerLink: '/ingreso-siniestros', icon: 'pi pi-plus'},
-          { label: 'Consulta y modificación de siniestros por póliza', routerLink: '/consulta-modificacion-siniestros', icon: 'pi pi-sliders-h'}
+          { label: 'Ingreso de siniestros', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
+          { label: 'Consulta y modificación de siniestros por póliza', icon: 'pi pi-sliders-h', command: (item) => this.changeLabel(item)}
         ]
       },
       { 
         label: 'Facturas', icon: 'pi pi-wallet' ,items: [
-          { label: 'Consulta de facturas', routerLink: '/consulta-facturas', icon: 'pi pi-eye'},
+          { label: 'Consulta de facturas', icon: 'pi pi-eye', command: (item) => this.changeLabel(item)},
         ] 
       }
   ];
+
     let temp:any = localStorage.getItem("user"); 
     if(temp){
       this.newUser = JSON.parse(temp);
@@ -53,12 +55,9 @@ export class DashboardComponent implements OnInit{
 
   }
 
-  onChange(event:any) {
-    this.activeIndex = event.index;
-  }
-
-  obtenerClientes(){
-    this.successToken = !this.successToken;
+  changeLabel(obj: any) {
+    console.log(obj.item.label)
+    this.selectedComponent = obj.item.label
   }
 
   logout(){

@@ -15,6 +15,7 @@ label {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="date"],
 button {
   border: 1px solid #ccc;
@@ -30,6 +31,7 @@ input[readonly] {
 }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="date"]:focus,
 button:focus {
   outline: none;
@@ -67,38 +69,6 @@ button:focus {
   font-size: 16px;
   cursor: pointer;
   max-width: 150px;
-}
-
-.btn-eliminar {
-  background-color: rgb(168, 0, 0);
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 8px 12px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-
-.btn-agregar:hover {
-  background-color: #001f3f;
-}
-
-.direccion-container {
-  margin-top: 20px;
-  max-height: 350px; /* altura máxima del contenedor */
-  overflow-y: auto; /* agregar desplazamiento vertical */
-}
-
-.direccion-item {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.direccion-item h3 {
-  margin-top: 0;
 }
 
 .row {

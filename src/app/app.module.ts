@@ -26,6 +26,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { MenubarModule } from 'primeng/menubar';
 import { CreateClientesComponent } from './create-clientes/create-clientes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateCoberturasComponent } from './create-coberturas/create-coberturas.component';
+import { CreatePolizasComponent } from './create-polizas/create-polizas.component';
+import { CreateSiniestrosComponent } from './create-siniestros/create-siniestros.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientesTableComponent,
     DashboardEditComponent,
     ClientesTableEditComponent,
-    CreateClientesComponent
+    CreateClientesComponent,
+    CreateCoberturasComponent,
+    CreatePolizasComponent,
+    CreateSiniestrosComponent
   ],
   imports: [
     BrowserModule,
