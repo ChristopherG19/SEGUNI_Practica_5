@@ -30,19 +30,19 @@ export class DashboardComponent implements OnInit{
       { 
         label: 'Polizas', icon: 'pi pi-file', items: [
           { label: 'Emisión póliza', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
-          { label: 'Consulta y modificación de polizas', icon: 'pi pi-file-edit', command: (item) => this.changeLabel(item)}
+          { label: 'Consulta y modificación de polizas', icon: 'pi pi-file-edit', command: (item) => this.changeLabel(item)},
+          { 
+            label: 'Siniestros', icon: 'pi pi-exclamation-triangle', items: [
+              { label: 'Ingreso de siniestros', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
+              { label: 'Consulta y modificación de siniestros por póliza', icon: 'pi pi-sliders-h', command: (item) => this.changeLabel(item)}
+            ]
+          },
+          { 
+            label: 'Facturas', icon: 'pi pi-wallet' ,items: [ 
+              { label: 'Consulta de facturas', icon: 'pi pi-eye', command: (item) => this.changeLabel(item)},
+            ] 
+          }
         ]
-      },
-      { 
-        label: 'Siniestros', icon: 'pi pi-exclamation-triangle', items: [
-          { label: 'Ingreso de siniestros', icon: 'pi pi-plus', command: (item) => this.changeLabel(item)},
-          { label: 'Consulta y modificación de siniestros por póliza', icon: 'pi pi-sliders-h', command: (item) => this.changeLabel(item)}
-        ]
-      },
-      { 
-        label: 'Facturas', icon: 'pi pi-wallet' ,items: [
-          { label: 'Consulta de facturas', icon: 'pi pi-eye', command: (item) => this.changeLabel(item)},
-        ] 
       }
   ];
 
